@@ -22,7 +22,6 @@
 				<li><a href="index.php">Home</a></li>
 				<?php
 					if (isset($_SESSION['u_id'])) {
-						//echo '<li><a href="shipment.php">Shipment</a></li>';
 						
 						if ($_SESSION['u_username'] == 'Admin') {
 							echo '
