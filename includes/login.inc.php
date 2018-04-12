@@ -22,7 +22,7 @@ else {
 		$stmt = mysqli_stmt_init($conn);
 		
 		if (!mysqli_stmt_prepare($stmt, $sql)) {
-			header('Location: ..\index.php?login=error1');
+			header('Location: ..\index.php?login=error');
 		}
 		else {
 			mysqli_stmt_bind_param($stmt, 's', $username);
@@ -30,14 +30,14 @@ else {
 			$result = mysqli_stmt_get_result($stmt);
 			
 			if (!mysqli_num_rows($result)) {
-				header('Location: ..\index.php?login=error2');
+				header('Location: ..\index.php?login=error');
 				session_destroy();
 			}
 			else {
 				if ($row = mysqli_fetch_assoc($result)) {
 					$hashedPasswordCheck = password_verify($password, $row['u_password']);
 					if	(!$hashedPasswordCheck) {
-						header('Location: ..\index.php?login=error3');
+						header('Location: ..\index.php?login=error');
 					}
 					elseif ($hashedPasswordCheck) {
 						//log in user here
