@@ -1,5 +1,5 @@
 <?php
-
+/*
 include_once 'dbh.inc.php';
 
 $sql = 'SELECT * FROM users WHERE u_username = "Admin"';
@@ -20,5 +20,5 @@ if (!mysqli_num_rows($result)) {
 		mysqli_stmt_bind_param($stmt, 's', $hashedPwd);
 		mysqli_stmt_execute($stmt);
 	}
-}
+}*/
 
